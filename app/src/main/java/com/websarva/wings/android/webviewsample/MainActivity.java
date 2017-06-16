@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.webkit.SslErrorHandler;
-import android.webkit.ValueCallback;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -48,13 +47,6 @@ public class MainActivity extends AppCompatActivity {
         mWebView.setWebViewClient(new MyWebViewClient());
         mWebView.loadUrl("https://www.yahoo.co.jp");
         mWebView.getSettings().setJavaScriptEnabled(true);
-
-        mWebView.evaluateJavascript("", new ValueCallback<String>() {
-            @Override
-            public void onReceiveValue(String s) {
-
-            }
-        });
 
         mTextView = (EditText) findViewById(R.id.edit_text);
     }
